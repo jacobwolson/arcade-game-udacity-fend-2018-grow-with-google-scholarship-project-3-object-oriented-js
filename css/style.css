@@ -1,3 +1,77 @@
 body {
     text-align: center;
+    font-family: 'Courier', serif;
+}
+
+.level-text {
+  margin: 0;
+  padding: 0;
+  font-size: 3em;
+  color: #006500;
+  font-family: 'Georgia', serif;
+}
+
+/*
+ * Styles for the popover that appears on completion
+ * adapted from the w3schools tutorial "How TO - CSS/JS Modal":
+ * https://www.w3schools.com/howto/howto_css_modals.asp
+ */
+
+#completion-popover {
+  display: none;
+  position: absolute;
+  z-index: 40;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 200;
+}
+
+.popover-content {
+   background-color: #007ecc;
+   background-color: rgba(0, 126, 204, 0.98);
+   border-radius: 5px;
+   color: #fffff1;
+   font-family: 'Georgia', serif;
+   font-size: 1.5em;
+   margin: 10% auto;
+   padding: 1em;
+   border: 2px ridge #111;
+   width: 80%;
+   max-width: 35em;
+}
+
+.popover-content > p {
+  margin: 5% auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+#play-again-button {
+  margin: 0;
+  padding: 0 0.1em;
+  cursor: pointer;
+  font-family: 'Arial';
+  color: #111;
+  background-color: #b4b7ba;
+  font-size: 0.9em;
+  font-family: 'Courier', serif'
+  height: 1.5px;
+}
+
+.popover-close {
+  float: right;
+  font-size: 2em;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+}
+
+.popover-close:hover,
+.popover-close:focus {
+  color: #222;
+  cursor: pointer;
 }
