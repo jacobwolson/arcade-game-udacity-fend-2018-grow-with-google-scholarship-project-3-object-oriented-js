@@ -1,4 +1,4 @@
-// Variables declared use in multiple scopes
+// Variables declared for use in multiple scopes
 let levelComplete = false;
 
 // Enemies our player must avoid
@@ -10,7 +10,7 @@ class Enemy {
   }
 
   update(dt) {
-    this.x = this.x + 50 * dt;
+    this.x = this.x + 65 * dt;
     if (this.x > 500) {
       this.x = -3;
     }
@@ -30,17 +30,7 @@ class EnemySlow extends Enemy {
   }
 }
 
-
 class EnemyFast extends Enemy {
-  update(dt) {
-    this.x = this.x + 65 * dt;
-    if (this.x > 500) {
-      this.x = -3;
-    }
-  }
-}
-
-class EnemyFaster extends Enemy {
   update(dt) {
     this.x = this.x + 100 * dt;
     if (this.x > 520) {
@@ -49,13 +39,12 @@ class EnemyFaster extends Enemy {
   }
 }
 
-// The player the user controls and attempts to navigate across the canvas with
-
+// Player that user attempts to navigate "safely" across the canvas
 class Player {
   constructor () {
     this.sprite = 'images/char-cat-girl.png';
     this.x = 200;
-    this.y = 405;
+    this.y = 385;
   }
 
   update(dt) {}
@@ -65,32 +54,27 @@ class Player {
   }
 
   handleInput(k) {
-    if (k == 'left') {
-      this.x -=15;
-      if (this.x < -50) {
-        this.x = -45;
-      }
-    }
-    if (k == 'right') {
-      this.x +=15;
-      if (this.x > 450) {
-        this.x = 445;
-      }
-    }
-    if (k == 'up') {
-      this.y -= 15;
-    }
-    if (k == 'down') {
-      this.y += 15;
-      if (this.y > 425) {
-        this.y = 415;
-      }
+    switch(k) {
+      case 'left':
+        this.x = this.x - 20;
+        break;
+      case 'right':
+        this.x +=20;
+        break;
+      case 'up':
+        this.y -=20;
+        break;
+      case 'down':
+        this.y +=20;
+        break;
     }
   }
 
+  // Method filters for collision of player entity and an enemy entity.
+  // If collision detected, player is moved back to original start point.
   checkForCollision() {
-    let xLow = this.x - 60;
-    let xHigh = this.x + 60;
+    let xLow = this.x - 48;
+    let xHigh = this.x + 48;
     let yLow = this.y - 40;
     let yHigh = this.y + 40;
     allEnemies.forEach(function(e) {
@@ -109,35 +93,22 @@ class Player {
   }
 }
 
-
-
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
-const enemy1 = new Enemy(-5, 310);
-const enemy2 = new Enemy(220, 310);
-const enemy3 = new Enemy(350, 310);
-const enemy4 = new EnemyFast(25, 220);
-const enemy5 = new EnemyFast(200, 220);
-const enemy6 = new EnemySlow(-140, 130);
-const enemy7 = new EnemySlow(10, 130);
-const enemy8 = new EnemySlow(210, 130);
-const enemy9 = new EnemyFaster(200, 50);
-// let enemy1 = new Enemy(50, 50);
-// let enemy2 = new EnemySlow(200, 150);
-// let enemy3 = new EnemyFast(200, 300);
-// let enemy4 = new EnemySlow(0, 200);
-// let enemy5 = new EnemyFast(-100, 300);
-// let enemy6 = new EnemySlow(-100, 150);
-// let enemy7 = new EnemyFast(-200, 300);
-// let enemy8 = new Enemy(200, 50);
-let allEnemies = [enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8, enemy9];
+// Instanting objects for game entitities.
+// Instances of Enemy class placed in single array `allEnemies`.
+const enemy1 = new Enemy(25, 220);
+const enemy2 = new Enemy(200, 220);
+const enemy3 = new EnemySlow(-140, 130);
+const enemy4 = new EnemySlow(10, 130);
+const enemy5 = new EnemySlow(210, 130);
+const enemy6 = new EnemyFast(300, 50);
+const enemy7 = new EnemyFast(5, 50);
+const enemy8 = new EnemyFast(-100, 50);
+let allEnemies = [enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8];
 let player = new Player();
 
 
 
-// This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
+// Listens for key presses and sends the keys to Player.handleInput() method.
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
@@ -150,27 +121,31 @@ document.addEventListener('keyup', function(e) {
 });
 
 // Popover functionality
+
+/**
+ * Functionality for popover adapted from the w3schools tutorial
+ * "How TO - CSS/JS Modal": https://www.w3schools.com/howto/howto_css_modals.asp
+ */
 const popoverClose = document.body.querySelectorAll('.popover-close');
 const popover = document.body.querySelectorAll('.popover');
 const completionPopoverClose = document.body.querySelector('#completion-popover-close');
 
-/*
- * Code designed to handle possiblity of multiple popovers on page.
- */
+// Designed to handle possiblity of multiple popovers on page.
 popoverClose.forEach(function(x) {
-  x.addEventListener('click', function () {
+  x.addEventListener('click', closePopover);
+});
+
+function closePopover() {
   popover.forEach(function(x) {
     x.style.display = 'none';
   });
-  if (x.id = "completion-popover-close") {
+  // If closing popover displayed on game completion, reload page.
+  if (this.id ='completion-popover-close') {
     location.reload();
   };
-  });
-});
+}
 
-/* For popover displayed on game completion, refresh page if user
- * selects to play again.
- */
+// For popover displayed on game completion, refresh page if user selects to play again.
 document.querySelector("#play-again-button").addEventListener('click', function () {
   location.reload();
 });

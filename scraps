@@ -42,3 +42,42 @@ Player CF ES5 style / class prototype style
 //     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 // };
 // Player.prototype.handleInput = function() {};
+
+/*
+ * handeInput(k) method, expression replaced with switch statement
+ */
+
+// handleInput(k) {
+//   if (k == 'left') {
+//     this.x -=15;
+//     if (this.x < -50) {
+//       this.x = -45;
+//     }
+//   }
+//   if (k == 'right') {
+//     this.x +=15;
+//     if (this.x > 450) {
+//       this.x = 445;
+//     }
+//   }
+//   if (k == 'up') {
+//     this.y -= 15;
+//   }
+//   if (k == 'down') {
+//     this.y += 15;
+//     if (this.y > 425) {
+//       this.y = 415;
+//     }
+//   }
+// }
+
+// Abondoned subclass for Enemy
+
+// class EnemyFast extends Enemy {
+//   update(dt) {
+//     this.x = this.x + 65 * dt;
+//     if (this.x > 500) {
+//       this.x = -3;
+//     }
+//   }
+// }
