@@ -106,8 +106,6 @@ const enemy8 = new EnemyFast(-100, 50);
 let allEnemies = [enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8];
 let player = new Player();
 
-
-
 // Listens for key presses and sends the keys to Player.handleInput() method.
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
@@ -119,7 +117,6 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
-
 
 // Popover functionality
 
