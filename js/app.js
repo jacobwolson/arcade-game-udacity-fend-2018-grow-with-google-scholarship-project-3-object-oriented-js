@@ -63,7 +63,7 @@ class Player {
         break;
       case 'right':
         this.x +=20;
-        if (thix.x > 445 {
+        if (thix.x > 445) {
           this.x = 445;
         };
         break;
