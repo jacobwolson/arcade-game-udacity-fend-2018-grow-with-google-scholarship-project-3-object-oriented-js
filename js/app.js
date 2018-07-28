@@ -93,7 +93,7 @@ class Player {
   }
 }
 
-// Instanting objects for game entitities.
+// Instantiation of objects to create game entitities
 // Instances of Enemy class placed in single array `allEnemies`.
 const enemy1 = new Enemy(25, 220);
 const enemy2 = new Enemy(200, 220);
@@ -122,7 +122,7 @@ document.addEventListener('keyup', function(e) {
 
 /**
  * Functionality for popover adapted from the w3schools tutorial
- * "How TO - CSS/JS Modal": https://www.w3schools.com/howto/howto_css_modals.asp
+ * "How TO - CSS/JS Modal": https://www.w3schools.com/howto/howto_css_modals.asp.
  */
 const popoverClose = document.body.querySelectorAll('.popover-close');
 const popover = document.body.querySelectorAll('.popover');
