@@ -57,15 +57,24 @@ class Player {
     switch(k) {
       case 'left':
         this.x = this.x - 20;
+        if (this.x < -45) {
+        this.x = -45;
+        };
         break;
       case 'right':
         this.x +=20;
+        if (thix.x > 445 {
+          this.x = 445;
+        };
         break;
       case 'up':
         this.y -=20;
         break;
       case 'down':
         this.y +=20;
+        if (this.y > 415) {
+          thix.y = 415;
+        );
         break;
     }
   }
