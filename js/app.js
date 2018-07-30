@@ -12,7 +12,7 @@ class Enemy {
   update(dt) {
     this.x = this.x + 65 * dt;
     if (this.x > 500) {
-      this.x = -3;
+      this.x = 0;
     }
   }
 
@@ -25,7 +25,7 @@ class EnemySlow extends Enemy {
   update(dt) {
     this.x = this.x + 20 * dt;
     if (this.x > 500) {
-      this.x = -3;
+      this.x = 0;
     }
   }
 }
@@ -34,7 +34,7 @@ class EnemyFast extends Enemy {
   update(dt) {
     this.x = this.x + 100 * dt;
     if (this.x > 520) {
-      this.x = -50;
+      this.x = 0;
     }
   }
 }
