@@ -48,7 +48,7 @@ class EnemySlow extends Enemy {
 class EnemyFast extends Enemy {
   update(dt) {
     this.x = this.x + 100 * dt;
-    if (this.x > 520) {
+    if (this.x > 500) {
       this.x = 0;
     }
   }
