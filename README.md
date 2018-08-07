@@ -1,4 +1,4 @@
-# Clasic Arcade Game Project | Udacity FEND Nanodegree | 2018
+# Classic Arcade Game Project | Udacity FEND Nanodegree | 2018
 Project 3 for Udacity's Front-End Web Developer Nanodegree program; completed as part of the Grow with Google Scholarship Program, 2018.
 
 A classic arcade game based on Frogger that required students to use object-oriented JavaScript to implement functionality on the provided source code.
