@@ -1,3 +1,18 @@
+/*Portions of Matthew Cranford's walkthrough for this project were consulted
+*and concepts from the walkthrough were implimented or built upon in writing
+*code at various points throughout `app.js` and at places where interaction
+*between `app.js` and other scripts was added beyond such interaction included
+*in the source code provided by Udacity for this project.
+*
+*See:
+*https://matthewcranford.com/arcade-game-walkthrough-part-1-starter-code-breakdown/
+*https://matthewcranford.com/arcade-game-walkthrough-part-2-pseudo-code/
+*https://matthewcranford.com/arcade-game-walkthrough-part-3-creating-a-hero/
+*https://matthewcranford.com/arcade-game-walkthrough-part-4-heros-first-steps/
+*https://matthewcranford.com/arcade-game-walkthrough-part-5-adding-enemies/
+*https://matthewcranford.com/arcade-game-walkthrough-part-6-collisions-win-conditions-and-game-resets/
+*/
+
 // Variables declared for use in multiple scopes
 let levelComplete = false;
 
@@ -94,6 +109,17 @@ class Player {
     });
   }
 
+  /* When the player makes it "home," the level is finished and the
+  *completion popover is displayed.
+  *
+  *At this point, `levelComplete` is set to true, triggering
+  *`window.cancelAnimationFrame(main)` to run inside the `update(dt)` function
+  *in engine.js, stopping the game from being redrawn and preventing the player
+  *and the enemies entities from changing position any futher. The concept for this
+  *functionality and its implimentation using `window.cancelAnimationFrame()`
+  *was inspired by "Part 6" of Matthew Cranford's walkthrough for this project,
+  *"Collisions, Win Conditions, and Game Resets."
+  */  
   checkForFinish() {
     if(this.y < -10) {
       document.body.querySelector('#completion-popover').style.display = 'block';
