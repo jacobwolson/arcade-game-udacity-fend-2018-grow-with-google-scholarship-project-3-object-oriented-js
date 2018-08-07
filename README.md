@@ -5,7 +5,7 @@ A classic arcade game based on Frogger that required students to use object-orie
 
 ## Authors
 
-Utilizing various sources, Jacob W. Olson added to and edited code provided by Udacity, and utilized art assets provided by Udacity, to complete this project. Primary contributions to the project by Jacob W. Olson — drawing on sources noted — are in the `app.js` file, and also include the popover markup, styling and functionality, as well some interaction between methods and variables found in `app.js`, and the `engine.js` and `resources.js`, scripts provided by Udacity.
+Utilizing various sources, Jacob W. Olson added to and edited code provided by Udacity, and utilized art assets provided by Udacity, to complete this project. Primary contributions to the project by Jacob W. Olson — drawing on sources noted — are in the `app.js` file, and also include the popover markup, styling and functionality inspired by W3 School's tutorial on the topic, as well some interaction between methods and variables found in `app.js`, and the `engine.js` and `resources.js`, scripts provided by Udacity.
 
 ## Getting Started
 
