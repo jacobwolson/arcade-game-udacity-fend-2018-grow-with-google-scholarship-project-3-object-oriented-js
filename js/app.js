@@ -14,6 +14,9 @@
 */
 
 // Variables declared for use in multiple scopes
+/**
+ * Variable gets set to true when in `checkForFinish()` when player reaches the the goal destination.
+ */
 let levelComplete = false;
 
 // Enemies our player must avoid
@@ -123,7 +126,10 @@ class Player {
   checkForFinish() {
     if(this.y < -10) {
       document.body.querySelector('#completion-popover').style.display = 'block';
-      levelComplete = true;
+      /**
+       * If true, variable triggers `cancelAnimationFrame()` in `engine.js`.
+       */
+      let levelComplete = true;
     }
   }
 }

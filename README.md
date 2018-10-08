@@ -36,6 +36,15 @@ The foundational HTML and CSS code, in addition to the foundational `engine.js` 
 
 * The popover markup, stylings and implementation were adapted from code found in w3schools' post "How TO - CSS/JS Modal": https://www.w3schools.com/howto/howto_css_modals.asp.
 
+### `.cancelAnimationFrame()`
+
+    * Code for implementation of `.cancelAnimationFrame()` to stop browser from continuing to redraw canvas upon game commpletion adapted from example given in Mozilla Developer Network entry "window.cancelAnimationFrame()."
+        * http://mdn.beonex.com/en/DOM/window.cancelAnimationFrame.html. 
+        * Accessed Oct. 7, 2018.
+    * A StackOverflow answer posted by gman on May 25, 2012, was also consulted for the implementation of the `.cancelAnimationFrame()` method.
+        * https://stackoverflow.com/questions/10735922/how-to-stop-a-requestanimationframe-recursion-loop
+        * Accessed Oct. 7, 2018
+
 * This README was based on a template provided by Billie Thompson posting under the name "PurpleBooth" at https://gist.github.com/PurpleBooth/109311bb0361f32d87a2. A post by Matias Singers posting under the username "matiassingers" at https://github.com/matiassingers/awesome-readme was also consulted.
 
 * Udacity's FEND Nanodegree program provided the structure and much of the information I needed to learn the basics of HTML, CSS and JavaScript -- including object-oriented JS -- which allowed me to successfully complete this project. My fellow Udacity students as well as the wider programming community also provided indispensable information, resources, support and encouragement.

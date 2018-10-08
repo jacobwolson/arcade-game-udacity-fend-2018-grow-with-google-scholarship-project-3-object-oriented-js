@@ -54,8 +54,18 @@ var Engine = (function(global) {
 
         /* Use the browser's requestAnimationFrame function to call this
          * function again as soon as the browser is able to draw another frame.
+         * Source: http://mdn.beonex.com/en/DOM/window.cancelAnimationFrame.html
+         * Source: https://stackoverflow.com/questions/10735922/how-to-stop-a-requestanimationframe-recursion-loop
          */
-        win.requestAnimationFrame(main);
+        let myReq = win.requestAnimationFrame(main);
+        /**
+         * When player reahes the goal destination, `checkForFinish()` sets levelComplete to true, and 
+         * concomitant `cancelAnimationFrame()` executes.
+         */
+        if(levelComplete) {
+            cancelAnimationFrame(myReq);
+            return;
+        }
     }
 
     /* This function does some initial setup that should only occur once,
@@ -67,7 +77,7 @@ var Engine = (function(global) {
         lastTime = Date.now();
         main();
     }
-
+               
     /* This function is called by main (our game loop) and itself calls all
      * of the functions which may need to update entity's data. Based on how
      * you implement your collision detection (when two entities occupy the
@@ -83,10 +93,6 @@ var Engine = (function(global) {
         updateEntities(dt);
         player.checkForCollision();
         player.checkForFinish();
-        if (levelComplete) {
-          window.cancelAnimationFrame(main);
-        }
-
         // MAY NEED TO TURN THIS BACK ON
         // checkCollisions() {
     }
