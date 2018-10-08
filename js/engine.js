@@ -63,7 +63,6 @@ var Engine = (function(global) {
          * concomitant `cancelAnimationFrame()` executes.
          */
         if(levelComplete) {
-            console.log("complete");
             cancelAnimationFrame(myReq);
             return;
         }
