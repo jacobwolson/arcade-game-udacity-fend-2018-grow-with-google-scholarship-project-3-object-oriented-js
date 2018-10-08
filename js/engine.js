@@ -57,7 +57,7 @@ var Engine = (function(global) {
          * Source: http://mdn.beonex.com/en/DOM/window.cancelAnimationFrame.html
          * Source: https://stackoverflow.com/questions/10735922/how-to-stop-a-requestanimationframe-recursion-loop
          */
-        let myReq = win.requestAnimationFrame(main);
+        const myReq = win.requestAnimationFrame(main);
         /**
          * When player reahes the goal destination, `checkForFinish()` sets levelComplete to true, and 
          * concomitant `cancelAnimationFrame()` executes.
