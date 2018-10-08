@@ -15,7 +15,7 @@ The foundational HTML and CSS code, in addition to the foundational `engine.js` 
 
 2. Open the `index.html` file in your browser. Some tips for doing this from Help Desk Geek are available [here](https://helpdeskgeek.com/how-to/open-an-html-file-in-google-chrome/ ).
 
-    * As an alternative to steps one and two, you can run the repository's `index.html` file on [HTML Preview](http://htmlpreview.github.io/?https://github.com/jacobwolson/memory_game_project--udacity_fend_nanodegree--grow_with_google_scholarship_program--2018/blob/master/index.html).
+    * As an alternative to steps one and two, you can run the repository's `index.html` file on [HTML Preview](http://htmlpreview.github.io/?https://github.com/jacobwolson/classic-arcade-game-udacity-fend-2018-grow-with-google-scholarship-project-3-object-oriented-js/blob/master/index.html).
 
 3. Start playing!
 
