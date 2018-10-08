@@ -15,7 +15,7 @@
 
 // Variables declared for use in multiple scopes
 /**
- * Variable gets set to true when in `checkForFinish()` when player reaches the the goal destination.
+ * Gets set to true in `checkForFinish()` when player reaches goal destination.
  */
 let levelComplete = false;
 
@@ -127,9 +127,9 @@ class Player {
     if(this.y < -10) {
       document.body.querySelector('#completion-popover').style.display = 'block';
       /**
-       * If true, variable triggers `cancelAnimationFrame()` in `engine.js`.
+       * Setting `levelComplete` to true triggers execution of `.cancelAnimationFrame()` over in `engine.js`
        */
-      let levelComplete = true;
+      levelComplete = true;
     }
   }
 }
